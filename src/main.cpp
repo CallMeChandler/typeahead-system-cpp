@@ -24,12 +24,15 @@ int main() {
 
     trie.insert("cat");
     trie.insert("car");
+    trie.insert("camera");
+    trie.insert("camp");
     trie.insert("apple");
 
-    std::cout << trie.search("cat") << '\n';
-    std::cout << trie.search("car") << '\n';
-    std::cout << trie.search("cap") << '\n';
-    std::cout << trie.search("apple") << '\n';
+    auto words = trie.startsWith("ca");
+
+    for (const auto& word : words) {
+        std::cout << word << '\n';
+    }
 
     return 0;
 }
