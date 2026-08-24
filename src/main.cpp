@@ -55,6 +55,34 @@ int main(){
         return crow::response(response);
     });
 
+    CROW_ROUTE(app, "/words").methods("POST"_method)
+    ([&trie](const crow::request& req){
+        auto body = crow::json::load(req.body);
+
+        if (!body){
+            return crow::response(
+                400,
+                R"({"error":"invalid json"})"
+            );
+        }
+
+        std::string word = body["word"].s();
+
+        if (word.empty()){
+            return crow::response(
+                400,
+                R"({"error":"word required"})"
+            );
+        }
+
+        trie.insert(word);
+
+        crow::json::wvalue res;
+        res["message"] = "word inserted";
+
+        return crow::response(201, res);
+    });
+
     app.port(18080).multithreaded().run();
 
     return 0;
