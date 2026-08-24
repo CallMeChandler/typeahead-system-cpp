@@ -1,5 +1,7 @@
 #include "trie/Trie.hpp"
 
+#include <algorithm>
+
 Trie::Trie() {
     root = new TrieNode();
 }
@@ -18,6 +20,7 @@ void Trie::insert(const std::string& word) {
     }
 
     current->isEnd = true;
+    current->frequency++;
 }
 
 bool Trie::search(const std::string& word) {
@@ -36,21 +39,28 @@ bool Trie::search(const std::string& word) {
     return current->isEnd;
 }
 
-std::vector<std::string> Trie::startsWith(const std::string& prefix){
+std::vector<Suggestion> Trie::startsWith(const std::string& prefix) {
     TrieNode* current = root;
-    std::vector<std::string> results;
+    std::vector<Suggestion> results;
 
-    for (char ch:prefix){
-        int index = ch-'a';
+    for (char ch : prefix) {
+        int index = ch - 'a';
 
-        if (current->children[index]==nullptr){
+        if (current->children[index] == nullptr)
             return results;
-        }
 
         current = current->children[index];
     }
 
     collectWords(current, prefix, results);
+
+    std::sort(results.begin(), results.end(),
+        [](const Suggestion& a, const Suggestion& b) {
+            return a.frequency > b.frequency;
+        });
+
+    if (results.size() > 5)
+        results.resize(5);
 
     return results;
 }
@@ -58,10 +68,10 @@ std::vector<std::string> Trie::startsWith(const std::string& prefix){
 void Trie::collectWords(
     TrieNode* node,
     std::string currentWord,
-    std::vector<std::string>& results
+    std::vector<Suggestion>& results
 ) {
-    if (node->isEnd){
-        results.push_back(currentWord);
+    if (node->isEnd) {
+        results.push_back({currentWord, node->frequency});
     }
 
     for (int i = 0; i < 26; i++){
@@ -72,7 +82,7 @@ void Trie::collectWords(
                 node->children[i],
                 currentWord+nextChar,
                 results
-            );  
+            );
         }
     }
 }

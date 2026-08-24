@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 #include "trie/TrieNode.hpp"
+#include "models/Suggestion.hpp"
 
 class Trie {
 private:
@@ -11,7 +12,7 @@ private:
     void collectWords(
         TrieNode* node,
         std::string currentWord,
-        std::vector<std::string>& results
+        std::vector<Suggestion>& results
     );
 
 public:
@@ -20,5 +21,5 @@ public:
     void insert(const std::string& word);
     bool search(const std::string& word);
     
-    std::vector<std::string> startsWith(const std::string& prefix);
+    std::vector<Suggestion> startsWith(const std::string& prefix);
 };

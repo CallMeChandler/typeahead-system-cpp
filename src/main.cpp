@@ -22,17 +22,14 @@
 int main() {
     Trie trie;
 
-    trie.insert("cat");
-    trie.insert("car");
-    trie.insert("camera");
+    for(int i=0;i<5;i++) trie.insert("car");
+    for(int i=0;i<3;i++) trie.insert("camera");
+    for(int i=0;i<2;i++) trie.insert("cat");
     trie.insert("camp");
-    trie.insert("apple");
 
-    auto words = trie.startsWith("ca");
+    auto suggestions = trie.startsWith("ca");
 
-    for (const auto& word : words) {
-        std::cout << word << '\n';
+    for (const auto& s : suggestions) {
+        std::cout << s.word << " : " << s.frequency << '\n';
     }
-
-    return 0;
 }

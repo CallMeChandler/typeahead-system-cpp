@@ -6,4 +6,5 @@ TrieNode::TrieNode() {
     }
 
     isEnd = false;
+    frequency = 0;
 }
