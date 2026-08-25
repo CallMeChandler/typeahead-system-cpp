@@ -23,6 +23,23 @@ void Trie::insert(const std::string& word) {
     current->frequency++;
 }
 
+void Trie::insert(const std::string& word, int frequency){
+    TrieNode* current = root;
+
+    for (char ch:word){
+        int index = ch-'a';
+
+        if (current->children[index]==nullptr){
+            current->children[index] = new TrieNode();
+        }
+
+        current = current->children[index];
+    }
+
+    current->isEnd=true;
+    current->frequency=frequency;
+}
+
 bool Trie::search(const std::string& word) {
     TrieNode* current = root;
 
@@ -85,4 +102,22 @@ void Trie::collectWords(
             );
         }
     }
+}
+
+int Trie::getFrequency(const std::string& word){
+    TrieNode* current = root;
+
+    for (char ch:word){
+        int index=ch-'a';
+
+        if (current->children[index]==nullptr) return 0;
+
+        current=current->children[index];
+    }
+
+    if (!current->isEnd){
+        return 0;
+    }
+
+    return current->frequency;
 }

@@ -2,19 +2,21 @@
 
 #include "crow.h"
 #include "trie/Trie.hpp"
+#include "repository/WordRepository.hpp"
+
 
 int main(){
     crow::SimpleApp app;
 
     Trie trie;
 
-    trie.insert("car");
-    trie.insert("car");
-    trie.insert("car");
-    trie.insert("camera");
-    trie.insert("camera");
-    trie.insert("cat");
-    trie.insert("camp");
+    WordRepository repository("../data/words.json");
+
+    auto words = repository.loadAll();
+
+    for (const auto& word : words) {
+        trie.insert(word.word, word.frequency);
+    }
 
     CROW_ROUTE(app, "/health")
     ([]{
@@ -56,31 +58,47 @@ int main(){
     });
 
     CROW_ROUTE(app, "/words").methods("POST"_method)
-    ([&trie](const crow::request& req){
+    ([&trie, &repository](const crow::request& req) {
+
         auto body = crow::json::load(req.body);
 
-        if (!body){
-            return crow::response(
-                400,
-                R"({"error":"invalid json"})"
-            );
+        if (!body) {
+            return crow::response(400, R"({"error":"invalid json"})");
         }
 
         std::string word = body["word"].s();
 
-        if (word.empty()){
-            return crow::response(
-                400,
-                R"({"error":"word required"})"
-            );
+        if (word.empty()) {
+            return crow::response(400, R"({"error":"word required"})");
         }
 
         trie.insert(word);
 
-        crow::json::wvalue res;
-        res["message"] = "word inserted";
+        int frequency = trie.getFrequency(word);
 
-        return crow::response(201, res);
+        auto words = repository.loadAll();
+
+        bool found = false;
+
+        for (auto& item : words) {
+            if (item.word == word) {
+                item.frequency = frequency;
+                found = true;
+                break;
+            }
+        }
+
+        if (!found) {
+            words.push_back({word, frequency});
+        }
+
+        repository.saveAll(words);
+
+        crow::json::wvalue response;
+        response["message"] = "word inserted";
+        response["frequency"] = frequency;
+
+        return crow::response(201, response);
     });
 
     app.port(18080).multithreaded().run();

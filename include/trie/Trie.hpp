@@ -19,7 +19,10 @@ public:
     Trie();
 
     void insert(const std::string& word);
+    void insert(const std::string& word, int frequency);
+
     bool search(const std::string& word);
+    int getFrequency(const std::string& word);
     
     std::vector<Suggestion> startsWith(const std::string& prefix);
 };
