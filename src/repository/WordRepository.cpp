@@ -1,6 +1,7 @@
 #include "repository/WordRepository.hpp"
 
 #include <fstream>
+#include <stdexcept>
 
 #include <nlohmann/json.hpp>
 
@@ -19,14 +20,41 @@ std::vector<Suggestion> WordRepository::loadAll(){
         return words;
     }
 
-    json data;
-    file >> data;
+    if (file.peek()==std::ifstream::traits_type::eof()){
+        return words;
+    }
 
-    for (const auto& item:data){
+    json data;
+    
+    try{
+        file >> data;
+    }
+    catch (const json::parse_error& e){
+        throw std::runtime_error(
+                "Invalid JSON in words file: " + std::string(e.what())
+            );
+    }
+
+    if (!data.is_array()) {
+        throw std::runtime_error(
+            "Invalid words file: expected a JSON array"
+        );
+    }
+    
+
+    for (const auto& item : data) {
+
+        if (!item.contains("word") ||
+            !item.contains("frequency")) {
+            throw std::runtime_error(
+                "Invalid words file: missing word or frequency"
+            );
+        }
+
         Suggestion suggestion;
 
-        suggestion.word=item["word"];
-        suggestion.frequency=item["frequency"];
+        suggestion.word = item["word"];
+        suggestion.frequency = item["frequency"];
 
         words.push_back(suggestion);
     }
