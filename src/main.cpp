@@ -7,6 +7,17 @@
 #include "models/SearchEvent.hpp"
 
 #include <ctime>
+#include <fstream>
+#include <sstream>
+
+std::string readFile(const std::string& path) {
+    std::ifstream file(path);
+
+    std::stringstream buffer;
+    buffer << file.rdbuf();
+
+    return buffer.str();
+}
 
 
 int main(){
@@ -162,6 +173,24 @@ int main(){
         res["frequency"] = frequency;
 
         return crow::response(200, res);
+    });
+
+    CROW_ROUTE(app, "/")([] {
+        auto html = readFile("../frontend/index.html");
+
+        crow::response res(html);
+        res.set_header("Content-Type", "text/html");
+
+        return res;
+    });
+
+    CROW_ROUTE(app, "/app.js")([] {
+        auto js = readFile("../frontend/app.js");
+
+        crow::response res(js);
+        res.set_header("Content-Type", "application/javascript");
+
+        return res;
     });
 
     app.port(18080).multithreaded().run();

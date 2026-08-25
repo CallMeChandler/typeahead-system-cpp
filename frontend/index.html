@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typeahead System</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #111827;
+            color: white;
+            display: flex;
+            justify-content: center;
+            padding-top: 80px;
+        }
+
+        .container {
+            width: 500px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        #searchBox {
+            width: 100%;
+            padding: 14px;
+            font-size: 16px;
+            border-radius: 10px;
+            border: none;
+            outline: none;
+        }
+
+        #suggestions {
+            margin-top: 8px;
+            background: #1F2937;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .item {
+            padding: 12px 14px;
+            display: flex;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+
+        .item:hover {
+            background: #374151;
+        }
+
+        .freq {
+            color: #9CA3AF;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Autocomplete</h1>
+
+        <input id="searchBox" placeholder="Search..." autocomplete="off">
+
+        <div id="suggestions"></div>
+    </div>
+
+    <script src="/app.js"></script>
+
+</body>
+
+</html>
