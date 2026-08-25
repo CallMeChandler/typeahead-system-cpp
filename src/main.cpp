@@ -1,12 +1,7 @@
-#include <iostream>
-
 #include "crow.h"
-#include "trie/Trie.hpp"
-#include "repository/WordRepository.hpp"
-#include "repository/AnalyticsRepository.hpp"
-#include "models/SearchEvent.hpp"
 
-#include <ctime>
+#include "service/TypeaheadService.hpp"
+
 #include <fstream>
 #include <sstream>
 
@@ -19,43 +14,45 @@ std::string readFile(const std::string& path) {
     return buffer.str();
 }
 
+int main() {
 
-int main(){
     crow::SimpleApp app;
 
-    Trie trie;
+    TypeaheadService service;
 
-    WordRepository repository("../data/words.json");
-    AnalyticsRepository analytics("../data/search_logs.json");
+    CROW_ROUTE(app, "/")([] {
+        auto html = readFile("../public/index.html");
 
-    auto words = repository.loadAll();
+        crow::response res(html);
+        res.set_header("Content-Type", "text/html");
+        return res;
+    });
 
-    for (const auto& word : words) {
-        trie.insert(word.word, word.frequency);
-    }
+    CROW_ROUTE(app, "/app.js")([] {
+        auto js = readFile("../public/app.js");
 
-    CROW_ROUTE(app, "/health")
-    ([]{
-        return crow::response(
-            200,
-            R"({"status":"ok"})"
-        );
+        crow::response res(js);
+        res.set_header("Content-Type", "application/javascript");
+        return res;
+    });
+
+    CROW_ROUTE(app, "/health")([] {
+        return crow::response(200, R"({"status":"ok"})");
     });
 
     CROW_ROUTE(app, "/search")
-    ([&trie](const crow::request& req){
-        const auto& queryParams = req.url_params;
-        
-        const char* query = queryParams.get("q");
+    ([&service](const crow::request& req) {
 
-        if (query==nullptr||query[0]=='\0'){
+        const char* query = req.url_params.get("q");
+
+        if (query == nullptr || query[0] == '\0') {
             return crow::response(
                 400,
                 R"({"error":"missing query parameter"})"
             );
         }
 
-        auto suggestions = trie.startsWith(query);
+        auto suggestions = service.search(query);
 
         crow::json::wvalue response;
 
@@ -63,7 +60,6 @@ int main(){
 
         for (const auto& suggestion : suggestions) {
             crow::json::wvalue item;
-
             item["word"] = suggestion.word;
             item["frequency"] = suggestion.frequency;
 
@@ -74,54 +70,40 @@ int main(){
     });
 
     CROW_ROUTE(app, "/words").methods("POST"_method)
-    ([&trie, &repository](const crow::request& req) {
+    ([&service](const crow::request& req) {
 
         auto body = crow::json::load(req.body);
 
         if (!body) {
-            return crow::response(400, R"({"error":"invalid json"})");
+            return crow::response(
+                400,
+                R"({"error":"invalid json"})"
+            );
         }
 
         std::string word = body["word"].s();
 
         if (word.empty()) {
-            return crow::response(400, R"({"error":"word required"})");
+            return crow::response(
+                400,
+                R"({"error":"word required"})"
+            );
         }
 
-        trie.insert(word);
-
-        int frequency = trie.getFrequency(word);
-
-        auto words = repository.loadAll();
-
-        bool found = false;
-
-        for (auto& item : words) {
-            if (item.word == word) {
-                item.frequency = frequency;
-                found = true;
-                break;
-            }
-        }
-
-        if (!found) {
-            words.push_back({word, frequency});
-        }
-
-        repository.saveAll(words);
+        service.addWord(word);
 
         crow::json::wvalue response;
         response["message"] = "word inserted";
-        response["frequency"] = frequency;
 
         return crow::response(201, response);
     });
 
     CROW_ROUTE(app, "/select").methods("POST"_method)
-    ([&trie, &repository, &analytics](const crow::request& req){
+    ([&service](const crow::request& req) {
+
         auto body = crow::json::load(req.body);
 
-        if (!body){
+        if (!body) {
             return crow::response(
                 400,
                 R"({"error":"invalid json"})"
@@ -130,67 +112,20 @@ int main(){
 
         std::string query = body["query"].s();
         std::string word = body["word"].s();
-        
-        if (query.empty() || word.empty()){
+
+        if (query.empty() || word.empty()) {
             return crow::response(
                 400,
                 R"({"error":"query and word required"})"
             );
         }
 
-        trie.insert(word);
+        service.recordSelection(query, word);
 
-        int frequency = trie.getFrequency(word);
+        crow::json::wvalue response;
+        response["message"] = "selection recorded";
 
-        auto words = repository.loadAll();
-
-        bool found = false;
-
-        for (auto& item:words){
-            if (item.word==word){
-                item.frequency=frequency;
-                found=true;
-                break;
-            }
-        }
-
-        if (!found){
-            words.push_back({word, frequency});
-        }
-
-        repository.saveAll(words);
-
-        SearchEvent event{
-            query,
-            word,
-            std::time(nullptr)
-        };
-
-        analytics.logEvent(event);
-
-        crow::json::wvalue res;
-        res["message"] = "selection recorded";
-        res["frequency"] = frequency;
-
-        return crow::response(200, res);
-    });
-
-    CROW_ROUTE(app, "/")([] {
-        auto html = readFile("../frontend/index.html");
-
-        crow::response res(html);
-        res.set_header("Content-Type", "text/html");
-
-        return res;
-    });
-
-    CROW_ROUTE(app, "/app.js")([] {
-        auto js = readFile("../frontend/app.js");
-
-        crow::response res(js);
-        res.set_header("Content-Type", "application/javascript");
-
-        return res;
+        return crow::response(200, response);
     });
 
     app.port(18080).multithreaded().run();

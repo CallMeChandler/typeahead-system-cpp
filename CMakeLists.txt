@@ -27,6 +27,7 @@ add_executable(typeahead
     src/trie/Trie.cpp
     src/repository/WordRepository.cpp
     src/repository/AnalyticsRepository.cpp
+    src/service/TypeaheadService.cpp
 )
 
 target_link_libraries(typeahead

@@ -3,5 +3,15 @@
         "query": "ca",
         "selectedWord": "camera",
         "timestamp": 1787682408
+    },
+    {
+        "query": "cam",
+        "selectedWord": "camera",
+        "timestamp": 1787684168
+    },
+    {
+        "query": "ca",
+        "selectedWord": "candle",
+        "timestamp": 1787684590
     }
 ]
