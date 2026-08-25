@@ -2,5 +2,9 @@
     {
         "frequency": 4,
         "word": "candle"
+    },
+    {
+        "frequency": 1,
+        "word": "camera"
     }
 ]

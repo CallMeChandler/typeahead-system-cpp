@@ -3,6 +3,10 @@
 #include "crow.h"
 #include "trie/Trie.hpp"
 #include "repository/WordRepository.hpp"
+#include "repository/AnalyticsRepository.hpp"
+#include "models/SearchEvent.hpp"
+
+#include <ctime>
 
 
 int main(){
@@ -11,6 +15,7 @@ int main(){
     Trie trie;
 
     WordRepository repository("../data/words.json");
+    AnalyticsRepository analytics("../data/search_logs.json");
 
     auto words = repository.loadAll();
 
@@ -99,6 +104,64 @@ int main(){
         response["frequency"] = frequency;
 
         return crow::response(201, response);
+    });
+
+    CROW_ROUTE(app, "/select").methods("POST"_method)
+    ([&trie, &repository, &analytics](const crow::request& req){
+        auto body = crow::json::load(req.body);
+
+        if (!body){
+            return crow::response(
+                400,
+                R"({"error":"invalid json"})"
+            );
+        }
+
+        std::string query = body["query"].s();
+        std::string word = body["word"].s();
+        
+        if (query.empty() || word.empty()){
+            return crow::response(
+                400,
+                R"({"error":"query and word required"})"
+            );
+        }
+
+        trie.insert(word);
+
+        int frequency = trie.getFrequency(word);
+
+        auto words = repository.loadAll();
+
+        bool found = false;
+
+        for (auto& item:words){
+            if (item.word==word){
+                item.frequency=frequency;
+                found=true;
+                break;
+            }
+        }
+
+        if (!found){
+            words.push_back({word, frequency});
+        }
+
+        repository.saveAll(words);
+
+        SearchEvent event{
+            query,
+            word,
+            std::time(nullptr)
+        };
+
+        analytics.logEvent(event);
+
+        crow::json::wvalue res;
+        res["message"] = "selection recorded";
+        res["frequency"] = frequency;
+
+        return crow::response(200, res);
     });
 
     app.port(18080).multithreaded().run();
