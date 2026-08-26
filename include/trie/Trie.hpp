@@ -21,6 +21,12 @@ public:
     void insert(const std::string& word);
     void insert(const std::string& word, int frequency);
 
+    void updateTopSuggestions(
+        TrieNode* node,
+        const std::string& word,
+        int frequency
+    );
+
     bool search(const std::string& word);
     int getFrequency(const std::string& word);
     
