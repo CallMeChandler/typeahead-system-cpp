@@ -7,6 +7,7 @@
 #include "repository/WordRepository.hpp"
 #include "repository/AnalyticsRepository.hpp"
 #include "middleware/RateLimiter.hpp"
+#include "metrics/Metrics.hpp"
 
 class TypeaheadService {
 private:
@@ -14,6 +15,7 @@ private:
     WordRepository words;
     AnalyticsRepository analytics;
     RateLimiter limiter;
+    Metrics metrics;
 
     mutable std::shared_mutex mutex;
 
@@ -32,4 +34,6 @@ public:
         const std::string& query,
         const std::string& word
     );
+
+    Metrics& getMetrics();
 };

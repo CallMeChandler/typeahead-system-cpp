@@ -138,6 +138,28 @@ int main() {
         return crow::response(200, response);
     });
 
+    CROW_ROUTE(app, "/metrics")
+    ([&service] {
+
+        Metrics& metrics = service.getMetrics();
+
+        crow::json::wvalue response;
+
+        response["total_searches"] =
+            static_cast<int>(metrics.getTotalSearches());
+
+        response["total_insertions"] =
+            static_cast<int>(metrics.getTotalInsertions());
+
+        response["total_selections"] =
+            static_cast<int>(metrics.getTotalSelections());
+
+        response["unique_words"] =
+            static_cast<int>(metrics.getUniqueWords());
+
+        return crow::response(200, response);
+    });
+
     app.port(18080).multithreaded().run();
 
     return 0;

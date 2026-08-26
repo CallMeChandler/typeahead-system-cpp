@@ -1,10 +1,1622 @@
 [
     {
-        "frequency": 5,
+        "frequency": 8,
         "word": "candle"
     },
     {
-        "frequency": 2,
+        "frequency": 8,
         "word": "camera"
+    },
+    {
+        "frequency": 7,
+        "word": "car"
+    },
+    {
+        "frequency": 5,
+        "word": "cat"
+    },
+    {
+        "frequency": 3,
+        "word": "camp"
+    },
+    {
+        "frequency": 6,
+        "word": "apple"
+    },
+    {
+        "frequency": 5,
+        "word": "application"
+    },
+    {
+        "frequency": 3,
+        "word": "app"
+    },
+    {
+        "frequency": 5,
+        "word": "banana"
+    },
+    {
+        "frequency": 16,
+        "word": "backend"
+    },
+    {
+        "frequency": 21,
+        "word": "database"
+    },
+    {
+        "frequency": 18,
+        "word": "developer"
+    },
+    {
+        "frequency": 17,
+        "word": "development"
+    },
+    {
+        "frequency": 4,
+        "word": "design"
+    },
+    {
+        "frequency": 4,
+        "word": "docker"
+    },
+    {
+        "frequency": 25,
+        "word": "github"
+    },
+    {
+        "frequency": 30,
+        "word": "google"
+    },
+    {
+        "frequency": 20,
+        "word": "javascript"
+    },
+    {
+        "frequency": 18,
+        "word": "java"
+    },
+    {
+        "frequency": 23,
+        "word": "python"
+    },
+    {
+        "frequency": 14,
+        "word": "machine"
+    },
+    {
+        "frequency": 12,
+        "word": "learning"
+    },
+    {
+        "frequency": 1,
+        "word": "algorithm"
+    },
+    {
+        "frequency": 1,
+        "word": "algorithms"
+    },
+    {
+        "frequency": 1,
+        "word": "array"
+    },
+    {
+        "frequency": 1,
+        "word": "arrays"
+    },
+    {
+        "frequency": 2,
+        "word": "backends"
+    },
+    {
+        "frequency": 11,
+        "word": "frontend"
+    },
+    {
+        "frequency": 1,
+        "word": "frontends"
+    },
+    {
+        "frequency": 2,
+        "word": "databases"
+    },
+    {
+        "frequency": 1,
+        "word": "datastore"
+    },
+    {
+        "frequency": 2,
+        "word": "developers"
+    },
+    {
+        "frequency": 1,
+        "word": "debug"
+    },
+    {
+        "frequency": 1,
+        "word": "debugging"
+    },
+    {
+        "frequency": 1,
+        "word": "debugger"
+    },
+    {
+        "frequency": 2,
+        "word": "documentation"
+    },
+    {
+        "frequency": 1,
+        "word": "framework"
+    },
+    {
+        "frequency": 1,
+        "word": "frameworks"
+    },
+    {
+        "frequency": 1,
+        "word": "function"
+    },
+    {
+        "frequency": 1,
+        "word": "functions"
+    },
+    {
+        "frequency": 2,
+        "word": "git"
+    },
+    {
+        "frequency": 9,
+        "word": "programming"
+    },
+    {
+        "frequency": 2,
+        "word": "programmer"
+    },
+    {
+        "frequency": 1,
+        "word": "typescript"
+    },
+    {
+        "frequency": 1,
+        "word": "compiler"
+    },
+    {
+        "frequency": 1,
+        "word": "compilation"
+    },
+    {
+        "frequency": 1,
+        "word": "coding"
+    },
+    {
+        "frequency": 1,
+        "word": "code"
+    },
+    {
+        "frequency": 2,
+        "word": "software"
+    },
+    {
+        "frequency": 8,
+        "word": "system"
+    },
+    {
+        "frequency": 2,
+        "word": "systems"
+    },
+    {
+        "frequency": 2,
+        "word": "server"
+    },
+    {
+        "frequency": 1,
+        "word": "servers"
+    },
+    {
+        "frequency": 1,
+        "word": "client"
+    },
+    {
+        "frequency": 1,
+        "word": "clients"
+    },
+    {
+        "frequency": 1,
+        "word": "api"
+    },
+    {
+        "frequency": 1,
+        "word": "apis"
+    },
+    {
+        "frequency": 1,
+        "word": "http"
+    },
+    {
+        "frequency": 1,
+        "word": "https"
+    },
+    {
+        "frequency": 2,
+        "word": "request"
+    },
+    {
+        "frequency": 1,
+        "word": "requests"
+    },
+    {
+        "frequency": 1,
+        "word": "response"
+    },
+    {
+        "frequency": 1,
+        "word": "responses"
+    },
+    {
+        "frequency": 3,
+        "word": "network"
+    },
+    {
+        "frequency": 2,
+        "word": "networking"
+    },
+    {
+        "frequency": 2,
+        "word": "security"
+    },
+    {
+        "frequency": 1,
+        "word": "secure"
+    },
+    {
+        "frequency": 1,
+        "word": "authentication"
+    },
+    {
+        "frequency": 1,
+        "word": "authorization"
+    },
+    {
+        "frequency": 2,
+        "word": "microservice"
+    },
+    {
+        "frequency": 1,
+        "word": "microservices"
+    },
+    {
+        "frequency": 1,
+        "word": "architecture"
+    },
+    {
+        "frequency": 2,
+        "word": "designer"
+    },
+    {
+        "frequency": 3,
+        "word": "testing"
+    },
+    {
+        "frequency": 3,
+        "word": "test"
+    },
+    {
+        "frequency": 2,
+        "word": "tester"
+    },
+    {
+        "frequency": 1,
+        "word": "deployment"
+    },
+    {
+        "frequency": 1,
+        "word": "deploy"
+    },
+    {
+        "frequency": 1,
+        "word": "cloud"
+    },
+    {
+        "frequency": 2,
+        "word": "linux"
+    },
+    {
+        "frequency": 1,
+        "word": "terminal"
+    },
+    {
+        "frequency": 1,
+        "word": "kubernetes"
+    },
+    {
+        "frequency": 1,
+        "word": "container"
+    },
+    {
+        "frequency": 1,
+        "word": "containers"
+    },
+    {
+        "frequency": 1,
+        "word": "repository"
+    },
+    {
+        "frequency": 1,
+        "word": "repositories"
+    },
+    {
+        "frequency": 1,
+        "word": "branch"
+    },
+    {
+        "frequency": 1,
+        "word": "branches"
+    },
+    {
+        "frequency": 1,
+        "word": "commit"
+    },
+    {
+        "frequency": 1,
+        "word": "commits"
+    },
+    {
+        "frequency": 1,
+        "word": "merge"
+    },
+    {
+        "frequency": 1,
+        "word": "pull"
+    },
+    {
+        "frequency": 1,
+        "word": "push"
+    },
+    {
+        "frequency": 1,
+        "word": "build"
+    },
+    {
+        "frequency": 1,
+        "word": "library"
+    },
+    {
+        "frequency": 1,
+        "word": "libraries"
+    },
+    {
+        "frequency": 1,
+        "word": "package"
+    },
+    {
+        "frequency": 1,
+        "word": "packages"
+    },
+    {
+        "frequency": 1,
+        "word": "module"
+    },
+    {
+        "frequency": 1,
+        "word": "modules"
+    },
+    {
+        "frequency": 1,
+        "word": "class"
+    },
+    {
+        "frequency": 1,
+        "word": "classes"
+    },
+    {
+        "frequency": 2,
+        "word": "object"
+    },
+    {
+        "frequency": 1,
+        "word": "objects"
+    },
+    {
+        "frequency": 1,
+        "word": "interface"
+    },
+    {
+        "frequency": 1,
+        "word": "interfaces"
+    },
+    {
+        "frequency": 1,
+        "word": "inheritance"
+    },
+    {
+        "frequency": 1,
+        "word": "polymorphism"
+    },
+    {
+        "frequency": 1,
+        "word": "template"
+    },
+    {
+        "frequency": 1,
+        "word": "templates"
+    },
+    {
+        "frequency": 1,
+        "word": "pointer"
+    },
+    {
+        "frequency": 1,
+        "word": "pointers"
+    },
+    {
+        "frequency": 1,
+        "word": "memory"
+    },
+    {
+        "frequency": 1,
+        "word": "thread"
+    },
+    {
+        "frequency": 1,
+        "word": "threads"
+    },
+    {
+        "frequency": 2,
+        "word": "process"
+    },
+    {
+        "frequency": 1,
+        "word": "processes"
+    },
+    {
+        "frequency": 2,
+        "word": "queue"
+    },
+    {
+        "frequency": 1,
+        "word": "queues"
+    },
+    {
+        "frequency": 1,
+        "word": "stack"
+    },
+    {
+        "frequency": 1,
+        "word": "stacks"
+    },
+    {
+        "frequency": 2,
+        "word": "tree"
+    },
+    {
+        "frequency": 1,
+        "word": "trees"
+    },
+    {
+        "frequency": 1,
+        "word": "graph"
+    },
+    {
+        "frequency": 1,
+        "word": "graphs"
+    },
+    {
+        "frequency": 1,
+        "word": "hashmap"
+    },
+    {
+        "frequency": 1,
+        "word": "sql"
+    },
+    {
+        "frequency": 1,
+        "word": "query"
+    },
+    {
+        "frequency": 1,
+        "word": "queries"
+    },
+    {
+        "frequency": 2,
+        "word": "transaction"
+    },
+    {
+        "frequency": 1,
+        "word": "transactions"
+    },
+    {
+        "frequency": 1,
+        "word": "index"
+    },
+    {
+        "frequency": 1,
+        "word": "indexes"
+    },
+    {
+        "frequency": 1,
+        "word": "cache"
+    },
+    {
+        "frequency": 1,
+        "word": "caching"
+    },
+    {
+        "frequency": 1,
+        "word": "redis"
+    },
+    {
+        "frequency": 1,
+        "word": "mongodb"
+    },
+    {
+        "frequency": 1,
+        "word": "postgresql"
+    },
+    {
+        "frequency": 1,
+        "word": "mysql"
+    },
+    {
+        "frequency": 1,
+        "word": "aws"
+    },
+    {
+        "frequency": 1,
+        "word": "azure"
+    },
+    {
+        "frequency": 1,
+        "word": "amazon"
+    },
+    {
+        "frequency": 2,
+        "word": "microsoft"
+    },
+    {
+        "frequency": 1,
+        "word": "ai"
+    },
+    {
+        "frequency": 1,
+        "word": "artificial"
+    },
+    {
+        "frequency": 1,
+        "word": "artificialintelligence"
+    },
+    {
+        "frequency": 1,
+        "word": "machinelearning"
+    },
+    {
+        "frequency": 1,
+        "word": "deep"
+    },
+    {
+        "frequency": 1,
+        "word": "deeplearning"
+    },
+    {
+        "frequency": 2,
+        "word": "neural"
+    },
+    {
+        "frequency": 1,
+        "word": "neuralnetwork"
+    },
+    {
+        "frequency": 1,
+        "word": "networks"
+    },
+    {
+        "frequency": 1,
+        "word": "model"
+    },
+    {
+        "frequency": 1,
+        "word": "models"
+    },
+    {
+        "frequency": 3,
+        "word": "training"
+    },
+    {
+        "frequency": 1,
+        "word": "trainer"
+    },
+    {
+        "frequency": 1,
+        "word": "inference"
+    },
+    {
+        "frequency": 1,
+        "word": "prediction"
+    },
+    {
+        "frequency": 1,
+        "word": "predictive"
+    },
+    {
+        "frequency": 1,
+        "word": "classification"
+    },
+    {
+        "frequency": 1,
+        "word": "classifier"
+    },
+    {
+        "frequency": 1,
+        "word": "regression"
+    },
+    {
+        "frequency": 1,
+        "word": "clustering"
+    },
+    {
+        "frequency": 1,
+        "word": "transformer"
+    },
+    {
+        "frequency": 1,
+        "word": "transformers"
+    },
+    {
+        "frequency": 1,
+        "word": "llm"
+    },
+    {
+        "frequency": 1,
+        "word": "llms"
+    },
+    {
+        "frequency": 2,
+        "word": "language"
+    },
+    {
+        "frequency": 1,
+        "word": "natural"
+    },
+    {
+        "frequency": 1,
+        "word": "naturallanguage"
+    },
+    {
+        "frequency": 1,
+        "word": "nlp"
+    },
+    {
+        "frequency": 2,
+        "word": "computer"
+    },
+    {
+        "frequency": 1,
+        "word": "vision"
+    },
+    {
+        "frequency": 1,
+        "word": "computervision"
+    },
+    {
+        "frequency": 1,
+        "word": "tensorflow"
+    },
+    {
+        "frequency": 2,
+        "word": "pytorch"
+    },
+    {
+        "frequency": 1,
+        "word": "keras"
+    },
+    {
+        "frequency": 1,
+        "word": "scikit"
+    },
+    {
+        "frequency": 1,
+        "word": "numpy"
+    },
+    {
+        "frequency": 1,
+        "word": "pandas"
+    },
+    {
+        "frequency": 2,
+        "word": "data"
+    },
+    {
+        "frequency": 2,
+        "word": "dataset"
+    },
+    {
+        "frequency": 2,
+        "word": "datasets"
+    },
+    {
+        "frequency": 1,
+        "word": "analytics"
+    },
+    {
+        "frequency": 1,
+        "word": "analysis"
+    },
+    {
+        "frequency": 1,
+        "word": "statistics"
+    },
+    {
+        "frequency": 1,
+        "word": "embedding"
+    },
+    {
+        "frequency": 1,
+        "word": "embeddings"
+    },
+    {
+        "frequency": 1,
+        "word": "vector"
+    },
+    {
+        "frequency": 1,
+        "word": "vectors"
+    },
+    {
+        "frequency": 1,
+        "word": "vectorsearch"
+    },
+    {
+        "frequency": 1,
+        "word": "rag"
+    },
+    {
+        "frequency": 1,
+        "word": "retrieval"
+    },
+    {
+        "frequency": 1,
+        "word": "generation"
+    },
+    {
+        "frequency": 1,
+        "word": "generative"
+    },
+    {
+        "frequency": 1,
+        "word": "prompt"
+    },
+    {
+        "frequency": 1,
+        "word": "prompts"
+    },
+    {
+        "frequency": 1,
+        "word": "agent"
+    },
+    {
+        "frequency": 1,
+        "word": "agents"
+    },
+    {
+        "frequency": 2,
+        "word": "apply"
+    },
+    {
+        "frequency": 2,
+        "word": "applicant"
+    },
+    {
+        "frequency": 2,
+        "word": "appointment"
+    },
+    {
+        "frequency": 1,
+        "word": "appreciate"
+    },
+    {
+        "frequency": 1,
+        "word": "approach"
+    },
+    {
+        "frequency": 1,
+        "word": "appropriate"
+    },
+    {
+        "frequency": 1,
+        "word": "approval"
+    },
+    {
+        "frequency": 2,
+        "word": "band"
+    },
+    {
+        "frequency": 2,
+        "word": "bank"
+    },
+    {
+        "frequency": 1,
+        "word": "basketball"
+    },
+    {
+        "frequency": 1,
+        "word": "battle"
+    },
+    {
+        "frequency": 2,
+        "word": "camping"
+    },
+    {
+        "frequency": 2,
+        "word": "campus"
+    },
+    {
+        "frequency": 2,
+        "word": "candy"
+    },
+    {
+        "frequency": 2,
+        "word": "card"
+    },
+    {
+        "frequency": 2,
+        "word": "career"
+    },
+    {
+        "frequency": 2,
+        "word": "careful"
+    },
+    {
+        "frequency": 1,
+        "word": "carry"
+    },
+    {
+        "frequency": 2,
+        "word": "cartoon"
+    },
+    {
+        "frequency": 1,
+        "word": "case"
+    },
+    {
+        "frequency": 2,
+        "word": "category"
+    },
+    {
+        "frequency": 2,
+        "word": "catch"
+    },
+    {
+        "frequency": 1,
+        "word": "cause"
+    },
+    {
+        "frequency": 1,
+        "word": "center"
+    },
+    {
+        "frequency": 1,
+        "word": "central"
+    },
+    {
+        "frequency": 1,
+        "word": "century"
+    },
+    {
+        "frequency": 1,
+        "word": "company"
+    },
+    {
+        "frequency": 1,
+        "word": "complete"
+    },
+    {
+        "frequency": 1,
+        "word": "condition"
+    },
+    {
+        "frequency": 1,
+        "word": "connection"
+    },
+    {
+        "frequency": 1,
+        "word": "control"
+    },
+    {
+        "frequency": 1,
+        "word": "conversation"
+    },
+    {
+        "frequency": 1,
+        "word": "country"
+    },
+    {
+        "frequency": 1,
+        "word": "course"
+    },
+    {
+        "frequency": 1,
+        "word": "create"
+    },
+    {
+        "frequency": 1,
+        "word": "creation"
+    },
+    {
+        "frequency": 1,
+        "word": "customer"
+    },
+    {
+        "frequency": 1,
+        "word": "date"
+    },
+    {
+        "frequency": 1,
+        "word": "day"
+    },
+    {
+        "frequency": 1,
+        "word": "decision"
+    },
+    {
+        "frequency": 2,
+        "word": "device"
+    },
+    {
+        "frequency": 1,
+        "word": "digital"
+    },
+    {
+        "frequency": 1,
+        "word": "direction"
+    },
+    {
+        "frequency": 2,
+        "word": "document"
+    },
+    {
+        "frequency": 1,
+        "word": "education"
+    },
+    {
+        "frequency": 1,
+        "word": "email"
+    },
+    {
+        "frequency": 1,
+        "word": "employee"
+    },
+    {
+        "frequency": 1,
+        "word": "environment"
+    },
+    {
+        "frequency": 1,
+        "word": "event"
+    },
+    {
+        "frequency": 1,
+        "word": "example"
+    },
+    {
+        "frequency": 1,
+        "word": "experience"
+    },
+    {
+        "frequency": 1,
+        "word": "feature"
+    },
+    {
+        "frequency": 1,
+        "word": "file"
+    },
+    {
+        "frequency": 1,
+        "word": "finance"
+    },
+    {
+        "frequency": 1,
+        "word": "final"
+    },
+    {
+        "frequency": 1,
+        "word": "food"
+    },
+    {
+        "frequency": 1,
+        "word": "football"
+    },
+    {
+        "frequency": 1,
+        "word": "game"
+    },
+    {
+        "frequency": 1,
+        "word": "government"
+    },
+    {
+        "frequency": 1,
+        "word": "group"
+    },
+    {
+        "frequency": 1,
+        "word": "health"
+    },
+    {
+        "frequency": 1,
+        "word": "history"
+    },
+    {
+        "frequency": 1,
+        "word": "home"
+    },
+    {
+        "frequency": 1,
+        "word": "house"
+    },
+    {
+        "frequency": 1,
+        "word": "human"
+    },
+    {
+        "frequency": 1,
+        "word": "idea"
+    },
+    {
+        "frequency": 1,
+        "word": "image"
+    },
+    {
+        "frequency": 1,
+        "word": "information"
+    },
+    {
+        "frequency": 1,
+        "word": "internet"
+    },
+    {
+        "frequency": 1,
+        "word": "interview"
+    },
+    {
+        "frequency": 1,
+        "word": "job"
+    },
+    {
+        "frequency": 1,
+        "word": "journey"
+    },
+    {
+        "frequency": 1,
+        "word": "json"
+    },
+    {
+        "frequency": 1,
+        "word": "key"
+    },
+    {
+        "frequency": 1,
+        "word": "knowledge"
+    },
+    {
+        "frequency": 1,
+        "word": "laptop"
+    },
+    {
+        "frequency": 1,
+        "word": "large"
+    },
+    {
+        "frequency": 1,
+        "word": "life"
+    },
+    {
+        "frequency": 1,
+        "word": "link"
+    },
+    {
+        "frequency": 1,
+        "word": "management"
+    },
+    {
+        "frequency": 1,
+        "word": "manager"
+    },
+    {
+        "frequency": 1,
+        "word": "market"
+    },
+    {
+        "frequency": 1,
+        "word": "material"
+    },
+    {
+        "frequency": 1,
+        "word": "media"
+    },
+    {
+        "frequency": 1,
+        "word": "message"
+    },
+    {
+        "frequency": 1,
+        "word": "method"
+    },
+    {
+        "frequency": 1,
+        "word": "mobile"
+    },
+    {
+        "frequency": 1,
+        "word": "money"
+    },
+    {
+        "frequency": 1,
+        "word": "name"
+    },
+    {
+        "frequency": 1,
+        "word": "news"
+    },
+    {
+        "frequency": 1,
+        "word": "number"
+    },
+    {
+        "frequency": 1,
+        "word": "office"
+    },
+    {
+        "frequency": 1,
+        "word": "operation"
+    },
+    {
+        "frequency": 1,
+        "word": "opportunity"
+    },
+    {
+        "frequency": 1,
+        "word": "order"
+    },
+    {
+        "frequency": 1,
+        "word": "page"
+    },
+    {
+        "frequency": 1,
+        "word": "password"
+    },
+    {
+        "frequency": 1,
+        "word": "people"
+    },
+    {
+        "frequency": 1,
+        "word": "performance"
+    },
+    {
+        "frequency": 1,
+        "word": "person"
+    },
+    {
+        "frequency": 1,
+        "word": "phone"
+    },
+    {
+        "frequency": 1,
+        "word": "photo"
+    },
+    {
+        "frequency": 1,
+        "word": "picture"
+    },
+    {
+        "frequency": 1,
+        "word": "platform"
+    },
+    {
+        "frequency": 1,
+        "word": "player"
+    },
+    {
+        "frequency": 1,
+        "word": "point"
+    },
+    {
+        "frequency": 1,
+        "word": "policy"
+    },
+    {
+        "frequency": 1,
+        "word": "price"
+    },
+    {
+        "frequency": 1,
+        "word": "problem"
+    },
+    {
+        "frequency": 2,
+        "word": "product"
+    },
+    {
+        "frequency": 2,
+        "word": "program"
+    },
+    {
+        "frequency": 8,
+        "word": "project"
+    },
+    {
+        "frequency": 1,
+        "word": "question"
+    },
+    {
+        "frequency": 2,
+        "word": "react"
+    },
+    {
+        "frequency": 2,
+        "word": "read"
+    },
+    {
+        "frequency": 2,
+        "word": "real"
+    },
+    {
+        "frequency": 1,
+        "word": "result"
+    },
+    {
+        "frequency": 1,
+        "word": "school"
+    },
+    {
+        "frequency": 1,
+        "word": "search"
+    },
+    {
+        "frequency": 1,
+        "word": "service"
+    },
+    {
+        "frequency": 1,
+        "word": "solution"
+    },
+    {
+        "frequency": 1,
+        "word": "source"
+    },
+    {
+        "frequency": 1,
+        "word": "space"
+    },
+    {
+        "frequency": 1,
+        "word": "speed"
+    },
+    {
+        "frequency": 1,
+        "word": "sport"
+    },
+    {
+        "frequency": 1,
+        "word": "student"
+    },
+    {
+        "frequency": 1,
+        "word": "study"
+    },
+    {
+        "frequency": 1,
+        "word": "table"
+    },
+    {
+        "frequency": 1,
+        "word": "technology"
+    },
+    {
+        "frequency": 1,
+        "word": "text"
+    },
+    {
+        "frequency": 1,
+        "word": "time"
+    },
+    {
+        "frequency": 1,
+        "word": "tool"
+    },
+    {
+        "frequency": 1,
+        "word": "topic"
+    },
+    {
+        "frequency": 1,
+        "word": "total"
+    },
+    {
+        "frequency": 2,
+        "word": "travel"
+    },
+    {
+        "frequency": 1,
+        "word": "type"
+    },
+    {
+        "frequency": 2,
+        "word": "user"
+    },
+    {
+        "frequency": 2,
+        "word": "username"
+    },
+    {
+        "frequency": 1,
+        "word": "value"
+    },
+    {
+        "frequency": 1,
+        "word": "video"
+    },
+    {
+        "frequency": 1,
+        "word": "view"
+    },
+    {
+        "frequency": 1,
+        "word": "website"
+    },
+    {
+        "frequency": 1,
+        "word": "window"
+    },
+    {
+        "frequency": 1,
+        "word": "work"
+    },
+    {
+        "frequency": 1,
+        "word": "world"
+    },
+    {
+        "frequency": 1,
+        "word": "year"
+    },
+    {
+        "frequency": 1,
+        "word": "care"
+    },
+    {
+        "frequency": 1,
+        "word": "cargo"
+    },
+    {
+        "frequency": 1,
+        "word": "cam"
+    },
+    {
+        "frequency": 1,
+        "word": "cameras"
+    },
+    {
+        "frequency": 1,
+        "word": "campaign"
+    },
+    {
+        "frequency": 1,
+        "word": "cats"
+    },
+    {
+        "frequency": 1,
+        "word": "categories"
+    },
+    {
+        "frequency": 1,
+        "word": "catcher"
+    },
+    {
+        "frequency": 1,
+        "word": "can"
+    },
+    {
+        "frequency": 1,
+        "word": "candles"
+    },
+    {
+        "frequency": 1,
+        "word": "candidate"
+    },
+    {
+        "frequency": 1,
+        "word": "candidates"
+    },
+    {
+        "frequency": 1,
+        "word": "apples"
+    },
+    {
+        "frequency": 1,
+        "word": "applications"
+    },
+    {
+        "frequency": 1,
+        "word": "applied"
+    },
+    {
+        "frequency": 1,
+        "word": "applicants"
+    },
+    {
+        "frequency": 1,
+        "word": "back"
+    },
+    {
+        "frequency": 1,
+        "word": "backup"
+    },
+    {
+        "frequency": 1,
+        "word": "background"
+    },
+    {
+        "frequency": 1,
+        "word": "ban"
+    },
+    {
+        "frequency": 1,
+        "word": "bananas"
+    },
+    {
+        "frequency": 1,
+        "word": "bandwidth"
+    },
+    {
+        "frequency": 1,
+        "word": "banking"
+    },
+    {
+        "frequency": 1,
+        "word": "dev"
+    },
+    {
+        "frequency": 1,
+        "word": "developing"
+    },
+    {
+        "frequency": 1,
+        "word": "devi"
+    },
+    {
+        "frequency": 1,
+        "word": "devices"
+    },
+    {
+        "frequency": 1,
+        "word": "des"
+    },
+    {
+        "frequency": 1,
+        "word": "designers"
+    },
+    {
+        "frequency": 1,
+        "word": "destination"
+    },
+    {
+        "frequency": 1,
+        "word": "dat"
+    },
+    {
+        "frequency": 1,
+        "word": "do"
+    },
+    {
+        "frequency": 1,
+        "word": "documents"
+    },
+    {
+        "frequency": 1,
+        "word": "goo"
+    },
+    {
+        "frequency": 1,
+        "word": "googlecloud"
+    },
+    {
+        "frequency": 1,
+        "word": "good"
+    },
+    {
+        "frequency": 1,
+        "word": "githubactions"
+    },
+    {
+        "frequency": 1,
+        "word": "gitlab"
+    },
+    {
+        "frequency": 1,
+        "word": "jav"
+    },
+    {
+        "frequency": 1,
+        "word": "javascriptengine"
+    },
+    {
+        "frequency": 1,
+        "word": "py"
+    },
+    {
+        "frequency": 1,
+        "word": "pyramid"
+    },
+    {
+        "frequency": 1,
+        "word": "mac"
+    },
+    {
+        "frequency": 1,
+        "word": "machines"
+    },
+    {
+        "frequency": 1,
+        "word": "macbook"
+    },
+    {
+        "frequency": 1,
+        "word": "mic"
+    },
+    {
+        "frequency": 1,
+        "word": "microphone"
+    },
+    {
+        "frequency": 1,
+        "word": "neu"
+    },
+    {
+        "frequency": 1,
+        "word": "pro"
+    },
+    {
+        "frequency": 1,
+        "word": "rea"
+    },
+    {
+        "frequency": 1,
+        "word": "reactive"
+    },
+    {
+        "frequency": 1,
+        "word": "reader"
+    },
+    {
+        "frequency": 1,
+        "word": "realtime"
+    },
+    {
+        "frequency": 1,
+        "word": "sys"
+    },
+    {
+        "frequency": 1,
+        "word": "syntax"
+    },
+    {
+        "frequency": 1,
+        "word": "tes"
+    },
+    {
+        "frequency": 1,
+        "word": "tra"
+    },
+    {
+        "frequency": 1,
+        "word": "transfer"
+    },
+    {
+        "frequency": 1,
+        "word": "use"
+    },
+    {
+        "frequency": 1,
+        "word": "users"
     }
 ]

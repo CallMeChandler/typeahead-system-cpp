@@ -29,6 +29,7 @@ add_executable(typeahead
     src/repository/AnalyticsRepository.cpp
     src/service/TypeaheadService.cpp
     src/middleware/RateLimiter.cpp
+    src/metrics/Metrics.cpp
 )
 
 target_link_libraries(typeahead

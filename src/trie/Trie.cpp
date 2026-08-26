@@ -23,27 +23,35 @@ void Trie::insert(const std::string& word) {
     current->frequency++;
 }
 
-void Trie::insert(const std::string& word, int frequency){
+void Trie::insert(const std::string& word, int frequency) {
     TrieNode* current = root;
 
-    for (char ch:word){
-        int index = ch-'a';
+    for (char ch : word) {
+        int index = ch - 'a';
 
-        if (current->children[index]==nullptr){
+        if (current->children[index] == nullptr) {
             current->children[index] = new TrieNode();
         }
+
+        current = current->children[index];
+    }
+
+    current->isEnd = true;
+    current->frequency = frequency;
+
+    current = root;
+
+    for (char ch : word) {
+        int index = ch - 'a';
 
         current = current->children[index];
 
         updateTopSuggestions(
             current,
             word,
-            current->frequency+1
+            frequency
         );
     }
-
-    current->isEnd=true;
-    current->frequency=frequency;
 }
 
 void Trie::updateTopSuggestions(
@@ -54,27 +62,27 @@ void Trie::updateTopSuggestions(
 {
     bool found = false;
 
-    for (auto& item:node->topSuggestions){
-        if (item.word==word){
-            item.frequency=frequency;
-            found=true;
+    for (auto& item : node->topSuggestions) {
+        if (item.word == word) {
+            item.frequency = frequency;
+            found = true;
             break;
         }
     }
 
-    if (!found){
+    if (!found) {
         node->topSuggestions.push_back({word, frequency});
     }
 
     std::sort(
         node->topSuggestions.begin(),
         node->topSuggestions.end(),
-        [](const Suggestion& a, const Suggestion& b){
-            return a.frequency<b.frequency;
+        [](const Suggestion& a, const Suggestion& b) {
+            return a.frequency > b.frequency;
         }
     );
 
-    if (node->topSuggestions.size()>5){
+    if (node->topSuggestions.size() > 5) {
         node->topSuggestions.resize(5);
     }
 }

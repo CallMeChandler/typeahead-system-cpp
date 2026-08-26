@@ -4,14 +4,16 @@
 #include <mutex>
 
 TypeaheadService::TypeaheadService()
-    :words("../data/words.json"),
-    analytics("../data/search_logs.json")
+    : words("../data/words.json"),
+      analytics("../data/search_logs.json")
 {
     auto stored = words.loadAll();
 
-    for (const auto& item:stored){
+    for (const auto& item : stored) {
         trie.insert(item.word, item.frequency);
     }
+
+    metrics.setUniqueWords(stored.size());
 }
 
 std::vector<Suggestion>
@@ -19,7 +21,14 @@ TypeaheadService::search(const std::string& prefix)
 {
     std::shared_lock lock(mutex);
 
+    metrics.recordSearch();
+
     return trie.startsWith(prefix);
+}
+
+Metrics& TypeaheadService::getMetrics()
+{
+    return metrics;
 }
 
 void TypeaheadService::addWord(const std::string& word)
@@ -29,6 +38,8 @@ void TypeaheadService::addWord(const std::string& word)
     trie.insert(word);
 
     persistWord(word);
+
+    metrics.recordInsertion();
 }
 
 void TypeaheadService::persistWord(const std::string& word)
@@ -52,6 +63,8 @@ void TypeaheadService::persistWord(const std::string& word)
     }
 
     words.saveAll(all);
+
+    metrics.setUniqueWords(all.size());
 }
 
 bool TypeaheadService::canSearch(const std::string& clientId)
@@ -76,4 +89,6 @@ void TypeaheadService::recordSelection(
     };
 
     analytics.logEvent(event);
+
+    metrics.recordSelection();
 }
