@@ -21,7 +21,7 @@ int main() {
     TypeaheadService service;
 
     CROW_ROUTE(app, "/")([] {
-        auto html = readFile("../public/index.html");
+        auto html = readFile("../frontend/index.html");
 
         crow::response res(html);
         res.set_header("Content-Type", "text/html");
@@ -29,7 +29,7 @@ int main() {
     });
 
     CROW_ROUTE(app, "/app.js")([] {
-        auto js = readFile("../public/app.js");
+        auto js = readFile("../frontend/app.js");
 
         crow::response res(js);
         res.set_header("Content-Type", "application/javascript");
@@ -42,6 +42,16 @@ int main() {
 
     CROW_ROUTE(app, "/search")
     ([&service](const crow::request& req) {
+
+        std::string client = req.remote_ip_address;
+
+        if (!service.canSearch(client)) {
+
+            return crow::response(
+                429,
+                R"({"error":"rate limit exceeded"})"
+            );
+        }
 
         const char* query = req.url_params.get("q");
 

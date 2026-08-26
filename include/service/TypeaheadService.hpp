@@ -6,12 +6,14 @@
 #include "trie/Trie.hpp"
 #include "repository/WordRepository.hpp"
 #include "repository/AnalyticsRepository.hpp"
+#include "middleware/RateLimiter.hpp"
 
 class TypeaheadService {
 private:
     Trie trie;
     WordRepository words;
     AnalyticsRepository analytics;
+    RateLimiter limiter;
 
     mutable std::shared_mutex mutex;
 
@@ -23,6 +25,8 @@ public:
     std::vector<Suggestion> search(const std::string& prefix);
 
     void addWord(const std::string& word);
+
+    bool canSearch(const std::string& clientId);
 
     void recordSelection(
         const std::string& query,

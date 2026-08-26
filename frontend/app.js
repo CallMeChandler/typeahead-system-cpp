@@ -1,7 +1,19 @@
 const searchBox = document.getElementById("searchBox");
 const suggestionsDiv = document.getElementById("suggestions");
 
-searchBox.addEventListener("input", async () => {
+let debounceTimer;
+
+searchBox.addEventListener("input", () => {
+
+    clearTimeout(debounceTimer);
+
+    debounceTimer = setTimeout(() => {
+        fetchSuggestions();
+    }, 250);
+
+});
+
+async function fetchSuggestions() {
 
     const query = searchBox.value.trim();
 
@@ -14,7 +26,7 @@ searchBox.addEventListener("input", async () => {
     const data = await response.json();
 
     renderSuggestions(query, data.suggestions);
-});
+}
 
 function renderSuggestions(query, suggestions) {
 

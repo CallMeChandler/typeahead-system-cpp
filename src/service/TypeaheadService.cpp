@@ -54,6 +54,11 @@ void TypeaheadService::persistWord(const std::string& word)
     words.saveAll(all);
 }
 
+bool TypeaheadService::canSearch(const std::string& clientId)
+{
+    return limiter.allowRequest(clientId);
+}
+
 void TypeaheadService::recordSelection(
     const std::string& query,
     const std::string& word)
